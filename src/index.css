@@ -1,0 +1,324 @@
+/* === VIBRANT THEME === */
+@import './styles/vibrant-theme.css';
+@import './styles/animations.css';
+@import './styles/effects.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Global resets ─────────────────────────────────────────── */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background-color: #07090f;
+  color: #f1f5f9;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0d1b2a; }
+::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 3px; }
+
+/* ── Star twinkle ──────────────────────────────────────────── */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); filter: hue-rotate(0deg); }
+  50%       { opacity: 1;   transform: scale(1.4); filter: hue-rotate(60deg); }
+}
+
+.star { animation: twinkle var(--dur, 3s) ease-in-out infinite; }
+
+/* ── Shooting star ─────────────────────────────────────────── */
+@keyframes shooting-star {
+  0% { transform: translateX(0) translateY(0); opacity: 1; }
+  100% { transform: translateX(300px) translateY(300px); opacity: 0; }
+}
+
+.shooting-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #ffeb3b;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ffeb3b;
+  animation: shooting-star 2s ease-out forwards;
+}
+
+/* ── Float animation (planet / rocket icons) ───────────────── */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+.float { animation: floatY 3s ease-in-out infinite; }
+
+/* ── XP gain pop ───────────────────────────────────────────── */
+@keyframes xpPop {
+  0%   { opacity: 0; transform: translateY(0) scale(0.7); }
+  30%  { opacity: 1; transform: translateY(-20px) scale(1.2); }
+  80%  { opacity: 1; transform: translateY(-36px) scale(1); }
+  100% { opacity: 0; transform: translateY(-50px) scale(0.8); }
+}
+.xp-pop { animation: xpPop 1.2s ease-out forwards; }
+
+/* ── Correct / Wrong shake ─────────────────────────────────── */
+@keyframes shakeX {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-6px); }
+  40%       { transform: translateX(6px); }
+  60%       { transform: translateX(-4px); }
+  80%       { transform: translateX(4px); }
+}
+.shake { animation: shakeX 0.4s ease-in-out; }
+
+/* ── Pulse ring (daily quest card) ────────────────────────────  */
+@keyframes pulseRing {
+  0%   { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.5); }
+  70%  { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+}
+.pulse-ring { animation: pulseRing 2s ease-out infinite; }
+
+/* ── Timer bar shrink ──────────────────────────────────────── */
+@keyframes timerShrink {
+  from { width: 100%; }
+  to   { width: 0%; }
+}
+
+/* ── Bounce in (badge reveal) ──────────────────────────────── */
+@keyframes bounceIn {
+  0%   { opacity: 0; transform: scale(0.3); }
+  50%  { transform: scale(1.15); }
+  70%  { transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+.bounce-in { animation: bounceIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+
+/* ── Slide up ──────────────────────────────────────────────── */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.slide-up { animation: slideUp 0.35s ease-out forwards; }
+
+/* ── Gradient text ─────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #ff1493, #00ffff, #ffeb3b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Animated gradient shift ───────────────────────────────── */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ── Card base ─────────────────────────────────────────────── */
+.galactic-card {
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(255, 20, 147, 0.4);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 20px rgba(255, 20, 147, 0.2);
+}
+
+/* ── Glow effects ──────────────────────────────────────────── */
+.glow-blue   { box-shadow: 0 0 30px rgba(0, 255, 255, 0.6); }
+.glow-purple { box-shadow: 0 0 30px rgba(255, 20, 147, 0.6); }
+.glow-green  { box-shadow: 0 0 30px rgba(0, 255, 135, 0.6); }
+.glow-yellow { box-shadow: 0 0 30px rgba(255, 235, 59, 0.6); }
+
+/* ── Scrollbar styles for badge display ───────────────────── */
+.scrollbar-thin::-webkit-scrollbar {
+  height: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 2px;
+}
+
+/* === MOBILE OPTIMIZATIONS === */
+@media (max-width: 768px) {
+  /* Larger touch targets */
+  button {
+    min-height: 44px;
+  }
+
+  /* Disable hover effects on mobile */
+  .interactive-card:hover {
+    transform: none;
+  }
+
+  /* Reduce particle count */
+  .particle {
+    display: none;
+  }
+
+  .particle:nth-child(-n+30) {
+    display: block;
+  }
+}
+
+/* Prevent double-tap zoom */
+button,
+a {
+  touch-action: manipulation;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* === FOCUS STYLES FOR KEYBOARD NAVIGATION === */
+*:focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+button:focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 4px;
+}
+
+/* === MODERN PROFESSIONAL STYLES === */
+
+/* Wave divider */
+.wave-divider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 60px;
+}
+
+.wave-divider .shape-fill {
+  fill: currentColor;
+}
+
+/* Hero section styles */
+.hero-section {
+  background: linear-gradient(135deg, #0a0e27 0%, #1a0a2e 50%, #16213e 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Modern card styles */
+.modern-card {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 16px;
+  border: 2px solid rgba(255, 20, 147, 0.3);
+  box-shadow: 0 4px 20px rgba(255, 20, 147, 0.2);
+  transition: all 0.3s ease;
+}
+
+.modern-card:hover {
+  box-shadow: 0 8px 30px rgba(255, 20, 147, 0.4);
+  transform: translateY(-2px);
+  border-color: rgba(255, 20, 147, 0.5);
+}
+
+/* Professional button styles */
+.btn-primary {
+  background: linear-gradient(135deg, #ff1493 0%, #00ffff 100%);
+  color: white;
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(255, 20, 147, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255, 20, 147, 0.6);
+}
+
+.btn-secondary {
+  background: rgba(0, 0, 0, 0.5);
+  color: #00ffff;
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: 12px;
+  border: 2px solid #00ffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(0, 255, 255, 0.2);
+  color: #ffeb3b;
+  border-color: #ffeb3b;
+}
+
+/* Header styles */
+.modern-header {
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 2px 20px rgba(255, 20, 147, 0.3);
+  border-bottom: 2px solid rgba(255, 20, 147, 0.3);
+  position: relative;
+  z-index: 50;
+}
+
+/* Typography improvements */
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, #ff1493, #00ffff, #ffeb3b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #ff1493, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #ff1493;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .wave-divider svg {
+    height: 40px;
+  }
+}

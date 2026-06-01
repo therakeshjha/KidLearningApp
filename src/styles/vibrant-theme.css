@@ -1,0 +1,124 @@
+/* src/styles/vibrant-theme.css */
+
+:root {
+  /* === CORE GRADIENTS === */
+  --purple-power: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --pink-blast: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --cyan-wave: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --green-surge: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  --gold-rush: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+
+  /* === SOLID COLORS (extracted from gradients) === */
+  --purple-start: #667eea;
+  --purple-end: #764ba2;
+  --pink-start: #f093fb;
+  --pink-end: #f5576c;
+  --cyan-start: #4facfe;
+  --cyan-end: #00f2fe;
+  --green-start: #43e97b;
+  --green-end: #38f9d7;
+  --gold-start: #fa709a;
+  --gold-end: #fee140;
+
+  /* === ENHANCED BACKGROUNDS === */
+  --card-bg-vibrant: #1a1a2e;
+  --card-glow-radius: 20px;
+
+  /* === SUBJECT COLORS === */
+  --math-gradient: var(--purple-power);
+  --science-gradient: var(--cyan-wave);
+  --reading-gradient: var(--pink-blast);
+  --geography-gradient: var(--green-surge);
+}
+
+/* === GRADIENT BACKGROUNDS === */
+.bg-gradient-purple { background: var(--purple-power); }
+.bg-gradient-pink { background: var(--pink-blast); }
+.bg-gradient-cyan { background: var(--cyan-wave); }
+.bg-gradient-green { background: var(--green-surge); }
+.bg-gradient-gold { background: var(--gold-rush); }
+
+/* === GRADIENT TEXT === */
+.gradient-text-purple {
+  background: var(--purple-power);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-pink {
+  background: var(--pink-blast);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-cyan {
+  background: var(--cyan-wave);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-green {
+  background: var(--green-surge);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-gold {
+  background: var(--gold-rush);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* === GRADIENT BORDERS === */
+.border-gradient-purple {
+  border: 2px solid transparent;
+  background-image: var(--purple-power);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.border-gradient-pink {
+  border: 2px solid transparent;
+  background-image: var(--pink-blast);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.border-gradient-cyan {
+  border: 2px solid transparent;
+  background-image: var(--cyan-wave);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.border-gradient-green {
+  border: 2px solid transparent;
+  background-image: var(--green-surge);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.border-gradient-gold {
+  border: 2px solid transparent;
+  background-image: var(--gold-rush);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+/* === GLOW EFFECTS === */
+.glow-purple { box-shadow: 0 0 20px rgba(102, 126, 234, 0.5); }
+.glow-pink { box-shadow: 0 0 20px rgba(240, 147, 251, 0.5); }
+.glow-cyan { box-shadow: 0 0 20px rgba(79, 172, 254, 0.5); }
+.glow-green { box-shadow: 0 0 20px rgba(67, 233, 123, 0.5); }
+.glow-gold { box-shadow: 0 0 20px rgba(250, 112, 154, 0.5); }
+
+/* === SUBJECT-SPECIFIC BACKGROUNDS === */
+.bg-gradient-math { background: var(--math-gradient); }
+.bg-gradient-science { background: var(--science-gradient); }
+.bg-gradient-reading { background: var(--reading-gradient); }
+.bg-gradient-geography { background: var(--geography-gradient); }
